@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody2D r2b;
     public float speed = 5.0f;
     private GameObject player;
 
     public Animator animator;
 
+    public AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Rigidbody2D r2d = this.GetComponent<Rigidbody2D>();
+        r2b = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -36,37 +39,45 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             animator.SetBool("isWalkingDown", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
         {
             animator.SetBool("isWalkingDown", false);
+            audio.Stop();
         }
         else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             animator.SetBool("isWalkingUp", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             animator.SetBool("isWalkingUp", false);
+            audio.Stop();
         }
         else if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             animator.SetBool("isWalkingRight", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             animator.SetBool("isWalkingRight", false);
+            audio.Stop();
         }
         else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             animator.SetBool("isWalkingLeft", true);
+            audio.Play();
         }
         else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
         {
             animator.SetBool("isWalkingLeft", false);
+            audio.Stop();
         }
 
 

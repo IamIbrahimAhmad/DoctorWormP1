@@ -11,6 +11,8 @@ public class ShowKeyPad : MonoBehaviour
     public bool keyPadIsOn;
     public GameObject player;
 
+    public ParticleSystem use;
+
     void Start()
     {
         keyPad.SetActive(false);
@@ -28,8 +30,13 @@ public class ShowKeyPad : MonoBehaviour
             keyPadIsOn = true;
             txtItem.text = "Press E to exit!";
             keyPad.SetActive(true);
-            player.GetComponent<PlayerController>().enabled = true;
-            player.GetComponent<Collider2D>().enabled = true;
+            player.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<PlayerController>().audio.Stop();
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingDown", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingRight", false);
+            player.GetComponent<PlayerController>().animator.SetBool("isWalkingLeft", false);
+            Cursor.visible = true;
         }
         else if (Input.GetKeyDown(KeyCode.E) && isOn && keyPadIsOn)
         {
@@ -37,7 +44,7 @@ public class ShowKeyPad : MonoBehaviour
             txtItem.text = "Press E to use!";
             keyPad.SetActive(false);
             player.GetComponent<PlayerController>().enabled = true;
-            player.GetComponent<Collider2D>().enabled = true;
+            Cursor.visible = false;
         }
     }
 
@@ -64,5 +71,10 @@ public class ShowKeyPad : MonoBehaviour
         txtItem.text = "";
         keyPad.SetActive(false);
         Time.timeScale = 1f;
+        player.GetComponent<PlayerController>().enabled = true;
+        Destroy(use);
+        GameObject clue = GameObject.FindGameObjectWithTag("clue");
+        Destroy(clue.GetComponent<clue1paper>().use);
+        Cursor.visible = false;
     }
 }
