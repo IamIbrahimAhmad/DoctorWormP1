@@ -32,83 +32,83 @@ public class WheelController : MonoBehaviour
                 selectedItem.sprite = noImage;
                 break;
             case 1:
-                Debug.Log("Red");
+                //Debug.Log("Red");
                 idA = symbolID;
                 break;
             case 2:
-                Debug.Log("Green");
+                //Debug.Log("Green");
                 idA = symbolID;
                 break;
             case 3:
-                Debug.Log("Blue");
+                //Debug.Log("Blue");
                 idA = symbolID;
                 break;
             case 4:
-                Debug.Log("Yellow");
+               // Debug.Log("Yellow");
                 idA = symbolID;
                 break;
             case 5:
-                Debug.Log("Grey");
+                //Debug.Log("Grey");
                 idA = symbolID;
                 break;
             case 6:
-                Debug.Log("White");
+                //Debug.Log("White");
                 idA = symbolID;
                 break;
             case 7:
-                Debug.Log("Purple");
+                //Debug.Log("Purple");
                 idA = symbolID;
                 break;
             case 8:
-                Debug.Log("Pink");
+                //Debug.Log("Pink");
                 idA = symbolID;
                 break;
             case 9:
-                Debug.Log("Orange");
+                //Debug.Log("Orange");
                 idA = symbolID;
                 break;
             case 10:
-                Debug.Log("Brown");
+                //Debug.Log("Brown");
                 idA = symbolID;
                 break;
             case 11:
-                Debug.Log("Red");
+                //Debug.Log("Red");
                 idM = symbolID;
                 break;
             case 12:
-                Debug.Log("Green");
+                //Debug.Log("Green");
                 idM = symbolID;
                 break;
             case 13:
-                Debug.Log("Blue");
+                //Debug.Log("Blue");
                 idM = symbolID;
                 break;
             case 14:
-                Debug.Log("Yellow");
+                //Debug.Log("Yellow");
                 idM = symbolID;
                 break;
             case 15:
-                Debug.Log("Grey");
+                //Debug.Log("Grey");
                 idM = symbolID;
                 break;
             case 16:
-                Debug.Log("White");
+               // Debug.Log("White");
                 idM = symbolID;
                 break;
             case 17:
-                Debug.Log("Purple");
+               // Debug.Log("Purple");
                 idM = symbolID;
                 break;
             case 18:
-                Debug.Log("Pink");
+                //Debug.Log("Pink");
                 idM = symbolID;
                 break;
             case 19:
-                Debug.Log("Orange");
+               // Debug.Log("Orange");
                 idM = symbolID;
                 break;
             case 20:
-                Debug.Log("Brown");
+                //Debug.Log("Brown");
                 idM = symbolID;
                 break;
         }

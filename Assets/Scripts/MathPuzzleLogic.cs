@@ -24,10 +24,10 @@ public class MathPuzzleLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        first = Random.Range(0, 10);
-        second = Random.Range(0, 10);
-        third = Random.Range(0, 10);
-        fourth = Random.Range(0, 10);
+        first = Random.Range(1, 10);
+        second = Random.Range(1, 10);
+        third = Random.Range(1, 10);
+        fourth = Random.Range(1, 10);
 
         addition = first + second + third; //math problem for upright triangle
         mult = first * fourth * third; //math problem for upside-down triangle
@@ -50,12 +50,19 @@ public class MathPuzzleLogic : MonoBehaviour
         choice1 = Add.GetComponent<WheelController>().idA;
         choice2 = Mult.GetComponent<WheelController>().idM;
 
-     
+        //print(choice1 + " " + choice2);
 
-        if ((choice1 == second) && ((choice2-10) == fourth))
+        //label text
+        itemText1.text = first.ToString();
+        itemText2.text = third.ToString();
+        resultAdd.text = addition.ToString();
+        resultMult.text = mult.ToString();
+
+
+        if ((choice1 == second) && (choice2 == (fourth + 10)))
         {
             //close UI and give key
-            Debug.Log("Sucess");
+            //Debug.Log("Sucess");
             //anim.SetBool("OpenWheel", false);
             //StartCoroutine("PuzzleOff");
             mathPuzzle.SetActive(false);
@@ -64,7 +71,7 @@ public class MathPuzzleLogic : MonoBehaviour
 
         else 
         {
-            Debug.Log("Try Again");
+            //Debug.Log("Try Again");
             //nothing
         }
     }
