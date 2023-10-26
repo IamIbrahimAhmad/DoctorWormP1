@@ -11,8 +11,14 @@ public class Timer : MonoBehaviour
 
     public float remainingTime;
 
+    public AudioSource theStart;
+    public AudioSource half;
+    public AudioSource fireT;
+    public AudioSource last30;
+
     private void Start()
     {
+        theStart.Play();
         fire.SetActive(false);
         gameOver.SetActive(false);
     }
@@ -36,9 +42,20 @@ public class Timer : MonoBehaviour
         int sec = Mathf.FloorToInt(remainingTime % 60);
         txtTime.text = string.Format("{0:00}:{1:00}", min, sec);
 
+        if(remainingTime <= 150)
+        {
+            half.Play();
+            print("Done");
+        }
+
         if(remainingTime <= 60)
         {
             fire.SetActive(true);
+            fireT.Play();
+        }
+        if(remainingTime <= 30)
+        {
+            last30.Play();
         }
         
     }

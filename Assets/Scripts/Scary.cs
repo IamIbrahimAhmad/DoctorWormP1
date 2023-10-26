@@ -7,7 +7,7 @@ public class Scary : MonoBehaviour
     public GameObject bed1;
     public GameObject bed2;
 
-    public AudioSource audio;
+    //public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,7 @@ public class Scary : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        bed1.SetActive(false);
+        bed2.SetActive(true);
     }
 }

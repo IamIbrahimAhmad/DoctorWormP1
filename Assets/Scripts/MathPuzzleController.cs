@@ -18,7 +18,6 @@ public class MathPuzzleController : MonoBehaviour
 
     public GameObject puzzle;
 
-
     public void Selected()
     {
         selected = true;
@@ -42,7 +41,6 @@ public class MathPuzzleController : MonoBehaviour
         anim.SetBool("Hover", false);
         itemText.text = "";
     }
-
 
     // Start is called before the first frame update
     void Start()
