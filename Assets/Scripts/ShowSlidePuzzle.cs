@@ -6,6 +6,7 @@ using TMPro;
 public class ShowSlidePuzzle : MonoBehaviour
 {
     public GameObject slidePuzzle;
+    public GameObject background;
     public GameObject player;
     public TMP_Text txtItem;
     private bool isOnS;
@@ -16,6 +17,7 @@ public class ShowSlidePuzzle : MonoBehaviour
     void Start()
     {
         slidePuzzle.SetActive(false);
+        background.SetActive(false);
         isOnS = false;
         slidePuzzleIsOn = false;
     }
@@ -31,6 +33,7 @@ public class ShowSlidePuzzle : MonoBehaviour
             player.GetComponent<PlayerController>().enabled = false;
             txtItem.text = "Press E to exit!";
             slidePuzzle.SetActive(true);
+            background.SetActive(true);
             player.GetComponent<PlayerController>().audio.Stop();
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingDown", false);
             player.GetComponent<PlayerController>().animator.SetBool("isWalkingUp", false);
@@ -45,6 +48,7 @@ public class ShowSlidePuzzle : MonoBehaviour
             player.GetComponent<PlayerController>().enabled = true;
             txtItem.text = "Press E to use!";
             slidePuzzle.SetActive(false);
+            background.SetActive(false);
             Cursor.visible = false;
         }
     }
@@ -71,6 +75,7 @@ public class ShowSlidePuzzle : MonoBehaviour
         slidePuzzleIsOn = false;
         txtItem.text = "";
         slidePuzzle.SetActive(false);
+        Destroy(background);
         Time.timeScale = 1f;
         Destroy(use);
         Cursor.visible = false;

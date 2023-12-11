@@ -19,6 +19,8 @@ public class SlidePuzzelController : MonoBehaviour
     public GameObject puzzelObject;
     public GameObject player;
 
+    public GameObject background;
+
     public ParticleSystem use;
 
 
@@ -66,6 +68,7 @@ public class SlidePuzzelController : MonoBehaviour
 
     void Start()
     {
+        background.SetActive(false);
         isDone = false;
         key2.SetActive(false);
 
@@ -82,6 +85,7 @@ public class SlidePuzzelController : MonoBehaviour
        //Give Key here
         if (Solved() && puzzelObject.active == true)
         {
+            Destroy(background);
             key2.SetActive(true);
             //slidePuzzle.SetActive(false);
             puzzelObject.SetActive(false);
