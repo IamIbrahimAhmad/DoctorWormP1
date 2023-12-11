@@ -7225,6 +7225,7 @@ MonoBehaviour:
   mathPuzzle: {fileID: 8552259889605287836}
   Add: {fileID: 4054508634869435378}
   Mult: {fileID: 2858040814053759855}
+  key: {fileID: 0}
 --- !u!1 &6324791237694038059
 GameObject:
   m_ObjectHideFlags: 0
@@ -9996,7 +9997,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8083079687380226398
 MonoBehaviour:
   m_ObjectHideFlags: 0
